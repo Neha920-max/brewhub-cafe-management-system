@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your cart, review order items, apply promo codes, choose dine-in or takeaway, and place your order at BrewHub.">
+  <title>Shopping Cart & Checkout | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn active" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-title-wrap" style="margin-bottom: 30px; text-align: left;">
+          <span class="section-tag">Order Summary & Checkout</span>
+          <h1 class="section-title">Your Order Cart</h1>
+          <p class="section-subtitle" style="margin: 0;">Review your selected items, apply promo vouchers, and place your order.</p>
+        </div>
+
+        <!-- Empty Cart Notice -->
+        <div id="cart-empty-message" style="display: none; text-align: center; padding: 60px 20px; background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <div style="font-size: 3.5rem; margin-bottom: 16px;">🛒</div>
+          <h2 style="color: var(--primary-dark); margin-bottom: 10px;">Your Cart is Currently Empty</h2>
+          <p style="color: var(--text-muted); margin-bottom: 25px; max-width: 450px; margin-left: auto; margin-right: auto;">
+            Looks like you haven't added any coffee or meals yet. Check out our delicious menu and find something you'll love!
+          </p>
+          <a href="menu.html" class="btn btn-primary btn-lg">
+            Browse Menu & Add Items ➔
+          </a>
+        </div>
+
+        <!-- Active Cart Layout -->
+        <div class="cart-layout" id="cart-content-wrapper">
+          <!-- Left: Cart Items Table -->
+          <div>
+            <div class="cart-table-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="font-size: 1.25rem; color: var(--primary-dark);">Selected Items</h2>
+                <button class="btn btn-outline btn-sm" onclick="clearCart()">
+                  Clear Entire Cart
+                </button>
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table class="cart-table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="cart-table-body">
+                    <!-- Dynamically populated by renderCartPage() -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <a href="menu.html" class="btn btn-secondary btn-sm">
+                  ← Add More Items
+                </a>
+              </div>
+            </div>
+
+            <!-- Customer & Order Details Form -->
+            <div class="cart-table-card" style="margin-top: 25px;">
+              <h2 style="font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 20px;">
+                Customer & Table Details
+              </h2>
+              <form id="checkout-form" onsubmit="handleCheckout(event)">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="order-name">Your Full Name *</label>
+                    <input type="text" id="order-name" class="form-control" placeholder="e.g. Neha Kumari Sah" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="order-phone">Contact Phone Number *</label>
+                    <input type="tel" id="order-phone" class="form-control" placeholder="e.g. 9841XXXXXX" required>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="order-type">Order Type *</label>
+                    <select id="order-type" class="form-control">
+                      <option value="Dine-in">🍽️ Dine-in (Eating at Cafe)</option>
+                      <option value="Takeaway">🥡 Takeaway (Pick up at Counter)</option>
+                      <option value="Delivery">🛵 Delivery (Within Putalisadak Area)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="order-table">Table Number (If Dine-in)</label>
+                    <input type="text" id="order-table" class="form-control" placeholder="e.g. Table 04 or Counter">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="order-notes">Special Instructions (Optional)</label>
+                  <textarea id="order-notes" class="form-control" style="min-height: 80px;" placeholder="e.g. Extra hot milk, less sugar, no onions..."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Select Payment Method</label>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 8px;">
+                    <label style="border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 10px; cursor: pointer; background: var(--bg-slate);">
+                      <input type="radio" name="payment-method" value="Cash on Counter" checked>
+                      <span>💵 Cash at Counter</span>
+                    </label>
+                    <label style="border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 10px; cursor: pointer; background: var(--bg-slate);">
+                      <input type="radio" name="payment-method" value="eSewa / Khalti QR (Mock)">
+                      <span>📱 eSewa / Khalti QR</span>
+                    </label>
+                    <label style="border: 1px solid var(--border-color); padding: 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 10px; cursor: pointer; background: var(--bg-slate);">
+                      <input type="radio" name="payment-method" value="Card Payment">
+                      <span>💳 Debit/Credit Card</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 15px;" id="place-order-btn">
+                  Confirm & Place Order ➔
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right: Bill Summary Card -->
+          <div>
+            <div class="cart-summary-card">
+              <h2 style="font-size: 1.25rem; color: var(--primary-dark); margin-bottom: 20px;">
+                Bill Breakdown
+              </h2>
+
+              <div class="summary-line">
+                <span>Items Subtotal:</span>
+                <strong id="cart-subtotal">Rs. 0</strong>
+              </div>
+
+              <div class="summary-line">
+                <span>Service Charge (10%):</span>
+                <strong id="cart-service-charge">Rs. 0</strong>
+              </div>
+
+              <div class="summary-line" id="cart-discount-row" style="display: none; color: var(--success);">
+                <span>Promo Discount:</span>
+                <strong id="cart-discount">- Rs. 0</strong>
+              </div>
+
+              <div class="summary-line total">
+                <span>Grand Total:</span>
+                <span id="cart-grand-total" style="color: var(--primary-blue);">Rs. 0</span>
+              </div>
+
+              <!-- Promo Code Input -->
+              <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color);">
+                <label class="form-label" for="coupon-code-input">Have a Promo Voucher?</label>
+                <div class="coupon-group">
+                  <input type="text" id="coupon-code-input" placeholder="e.g. BREW15" autocomplete="off">
+                  <button type="button" class="btn btn-primary btn-sm" onclick="applyCouponCode()">
+                    Apply
+                  </button>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">
+                  Try codes: <strong>BREW15</strong> (15% off), <strong>STUDENT10</strong> (10% off), or <strong>WELCOME50</strong>.
+                </div>
+              </div>
+
+              <!-- Rewards Points Notice -->
+              <div style="margin-top: 20px; background: var(--accent-soft); border-radius: var(--radius-md); padding: 14px; border: 1px solid var(--accent-border);">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                  <span style="font-size: 1.5rem;">🎁</span>
+                  <div>
+                    <strong style="color: var(--primary-dark); font-size: 0.9rem;">Earn 5% Loyalty Points</strong>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0;">Points are automatically credited to your BrewHub member card on checkout!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

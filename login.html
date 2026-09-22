@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to BrewHub Cafe Management System. Access customer orders, staff dashboard, or admin control panel.">
+  <title>User Login | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link active">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="auth-wrapper">
+      <div class="auth-card">
+        <div class="auth-header">
+          <div class="auth-logo">☕ Brew<span>Hub</span></div>
+          <h1 style="font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 6px;">Sign In to Your Account</h1>
+          <p class="auth-subtitle">Select your account role to access BrewHub portal</p>
+        </div>
+
+        <!-- Role Switcher Tabs -->
+        <div class="role-tabs">
+          <button type="button" class="role-tab active" data-role="Customer">Customer</button>
+          <button type="button" class="role-tab" data-role="Staff">Staff</button>
+          <button type="button" class="role-tab" data-role="Admin">Admin</button>
+        </div>
+
+        <!-- Role Hint Notification -->
+        <div style="background: var(--accent-soft); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 20px; font-size: 0.85rem; color: var(--primary-dark); border-left: 3px solid var(--primary-blue);" id="role-hint-text">
+          Browse menu, place orders, earn loyalty points, and redeem rewards.
+        </div>
+
+        <!-- Login Form -->
+        <form id="login-form">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Email or Mobile Number</label>
+            <input 
+              type="text" 
+              id="login-email" 
+              class="form-control" 
+              placeholder="e.g. neha@gmail.com or 9841234567" 
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <label class="form-label" for="login-password" style="margin: 0;">Password</label>
+              <a href="#" style="font-size: 0.82rem; color: var(--primary-blue);" onclick="showToast('Password reset functionality will be enabled with PHP backend.', 'info')">Forgot password?</a>
+            </div>
+            <input 
+              type="password" 
+              id="login-password" 
+              class="form-control" 
+              placeholder="••••••••" 
+              required
+            >
+          </div>
+
+          <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+            <label class="form-check">
+              <input type="checkbox" id="remember-me" checked>
+              <span>Remember this session</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;" id="submit-login-btn">
+            Sign In ➔
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-color); font-size: 0.92rem; color: var(--text-muted);">
+          New customer? 
+          <a href="register.html" style="font-weight: 700; color: var(--primary-blue);">Create an account here</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

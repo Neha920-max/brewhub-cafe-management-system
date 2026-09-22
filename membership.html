@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrewHub Rewards Club. Earn loyalty points on every coffee and meal, unlock VIP member discounts, and enjoy complimentary treats.">
+  <title>Membership & Loyalty Points | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link active">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">BrewHub Rewards Club</span>
+          <h1 class="section-title">Loyalty Points & VIP Membership</h1>
+          <p class="section-subtitle">
+            Every sip and bite brings you closer to exclusive perks, discounts, and complimentary cafe experiences.
+          </p>
+        </div>
+
+        <!-- Virtual Digital Membership Card -->
+        <div class="rewards-card-preview" id="digital-member-card">
+          <div class="rc-header">
+            <span style="font-weight: 800; font-size: 1.15rem; letter-spacing: 1px;">☕ BREWHUB CLUB</span>
+            <div class="rc-chip"></div>
+          </div>
+          <div class="rc-number" id="member-id-display">BH-MEM-8821</div>
+          <div class="rc-footer">
+            <div class="rc-holder">
+              <h4>Card Holder</h4>
+              <p id="member-name-display">Neha Kumari Sah</p>
+            </div>
+            <div class="rc-tier">
+              <span>Tier Level</span>
+              <strong id="member-tier-display">Silver</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Points Balance Bar -->
+        <div style="max-width: 580px; margin: -10px auto 45px; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px 24px; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Current Rewards Balance</span>
+            <h3 style="font-size: 1.8rem; color: var(--primary-blue); font-weight: 800;">
+              <span id="member-points-display">260</span> <span style="font-size: 1rem; font-weight: 600; color: var(--text-body);">Points</span>
+            </h3>
+          </div>
+          <div>
+            <a href="menu.html" class="btn btn-primary btn-sm">
+              Use Points in Menu
+            </a>
+          </div>
+        </div>
+
+        <!-- Membership Tiers Breakdown -->
+        <div class="section-title-wrap" style="margin-bottom: 30px;">
+          <h2 style="font-size: 1.8rem; color: var(--primary-dark);">Membership Tiers & Perks</h2>
+          <p class="section-subtitle">Level up your status with each visit to unlock increasingly luxurious benefits.</p>
+        </div>
+
+        <div class="tier-grid">
+          <!-- Bronze Tier -->
+          <div class="tier-card tier-bronze">
+            <span class="tier-badge">Entry Tier</span>
+            <h3>Bronze Club</h3>
+            <div class="tier-points">0 – 149 Points</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Free automatic enrollment on sign up.</p>
+            <ul class="tier-benefits">
+              <li>✓ 50 Instant Welcome Bonus Points</li>
+              <li>✓ Earn 5 points for every Rs. 100 spent</li>
+              <li>✓ Access to student & morning promo codes</li>
+              <li>✓ Digital receipt tracking</li>
+            </ul>
+          </div>
+
+          <!-- Silver Tier (Active / Featured) -->
+          <div class="tier-card tier-silver featured">
+            <span class="tier-badge" style="background: var(--accent-soft); color: var(--primary-blue);">Most Popular</span>
+            <h3>Silver VIP</h3>
+            <div class="tier-points">150 – 399 Points</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">For our frequent cafe visitors & regulars.</p>
+            <ul class="tier-benefits">
+              <li>✓ All Bronze privileges included</li>
+              <li>✓ <strong>Flat 5% Off</strong> on all coffee beverages</li>
+              <li>✓ Free pastry on your 10th order</li>
+              <li>✓ Priority preparation during rush hours</li>
+            </ul>
+          </div>
+
+          <!-- Gold Tier -->
+          <div class="tier-card tier-gold">
+            <span class="tier-badge">Elite VIP</span>
+            <h3>Gold Platinum</h3>
+            <div class="tier-points">400+ Points</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">The ultimate cafe luxury experience.</p>
+            <ul class="tier-benefits">
+              <li>✓ All Silver privileges included</li>
+              <li>✓ <strong>Flat 10% Off</strong> on all food and drinks</li>
+              <li>✓ Free complimentary beverage on birthday</li>
+              <li>✓ Free table reservations anytime</li>
+              <li>✓ Invitation to seasonal barista tasting sessions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Join / Enroll Membership Form -->
+        <div style="max-width: 620px; margin: 60px auto 0; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 35px; box-shadow: var(--shadow-md);">
+          <div style="text-align: center; margin-bottom: 25px;">
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">✨</div>
+            <h3 style="font-size: 1.4rem; color: var(--primary-dark);">Join BrewHub Rewards or Update Profile</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Get your digital card registered and instantly earn 50 welcome points.</p>
+          </div>
+
+          <form id="join-membership-form">
+            <div class="form-group">
+              <label class="form-label" for="join-name">Full Name *</label>
+              <input type="text" id="join-name" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="join-phone">Mobile Phone Number *</label>
+              <input type="tel" id="join-phone" class="form-control" placeholder="e.g. 9841234567" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
+              Create / Update My Membership Card
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

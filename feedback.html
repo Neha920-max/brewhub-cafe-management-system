@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Share your BrewHub cafe experience. Submit star ratings, food reviews, staff feedback, and read community guest opinions.">
+  <title>Customer Feedback & Reviews | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link active">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Your Opinion Matters</span>
+          <h1 class="section-title">Customer Feedback & Reviews</h1>
+          <p class="section-subtitle">
+            Help us serve you better! Rate your recent cafe visit and share your valuable thoughts with the BrewHub team.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: flex-start;">
+          <!-- Left: Feedback Submission Form -->
+          <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-md);">
+            <h2 style="font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 20px;">
+              Write a Review
+            </h2>
+
+            <form id="feedback-form">
+              <!-- Star Rating Picker -->
+              <div class="form-group">
+                <label class="form-label">Overall Rating *</label>
+                <div class="rating-stars" id="star-rating-container" title="Click to rate 1 to 5 stars">
+                  <span data-value="1" class="active">★</span>
+                  <span data-value="2" class="active">★</span>
+                  <span data-value="3" class="active">★</span>
+                  <span data-value="4" class="active">★</span>
+                  <span data-value="5" class="active">★</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Tap a star to rate from 1 to 5</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feedback-name">Your Full Name *</label>
+                <input type="text" id="feedback-name" class="form-control" placeholder="e.g. Neha Kumari Sah" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feedback-category">What are you rating? *</label>
+                <select id="feedback-category" class="form-control">
+                  <option value="Coffee & Beverages">☕ Coffee & Beverages</option>
+                  <option value="Food & Bakery">🥐 Food & Bakery Items</option>
+                  <option value="Staff & Service">🤝 Staff Courtesy & Speed</option>
+                  <option value="Cafe Ambiance">🛋️ Ambiance & Cleanliness</option>
+                  <option value="Overall Experience">🌟 Overall Cafe Experience</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="feedback-comment">Your Comments / Suggestions *</label>
+                <textarea id="feedback-comment" class="form-control" placeholder="Tell us what you liked or how we can improve..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                Submit Feedback ➔
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Community Feedback Feed -->
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h2 style="font-size: 1.3rem; color: var(--primary-dark);">Recent Guest Reviews</h2>
+              <span class="badge badge-blue">Verified Feedback</span>
+            </div>
+
+            <!-- Reviews Container (Rendered by main.js) -->
+            <div id="reviews-grid" style="display: flex; flex-direction: column; gap: 16px;">
+              <!-- Dynamically populated via renderFeedbackPage() -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

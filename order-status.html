@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your BrewHub cafe order status live. Check preparation progress, kitchen updates, and estimated readiness time.">
+  <title>Live Order Status Tracker | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link active">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Real-Time Kitchen Updates</span>
+          <h1 class="section-title">Live Order Status Tracker</h1>
+          <p class="section-subtitle">
+            Enter your Order ID below to track the live status of your coffee, food, and beverage preparation.
+          </p>
+        </div>
+
+        <!-- Order Lookup Form -->
+        <div style="max-width: 580px; margin: 0 auto 35px; background: #ffffff; padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+          <form id="order-lookup-form" style="display: flex; gap: 10px;">
+            <input 
+              type="text" 
+              id="lookup-order-id" 
+              class="form-control" 
+              placeholder="Enter Order ID (e.g. BH-1042)..." 
+              style="text-transform: uppercase;" 
+              required
+            >
+            <button type="submit" class="btn btn-primary" style="white-space: nowrap;">
+              🔍 Track Order
+            </button>
+          </form>
+        </div>
+
+        <!-- Order Tracker Results Container (Rendered by main.js) -->
+        <div id="order-tracker-result">
+          <!-- Dynamically populated via renderOrderStatusPage() -->
+        </div>
+
+        <!-- Helpful Guide Box -->
+        <div style="max-width: 800px; margin: 40px auto 0; background: var(--accent-soft); border-left: 4px solid var(--primary-blue); padding: 20px 25px; border-radius: var(--radius-md);">
+          <h3 style="color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 6px;">How Our Cafe Order Flow Works:</h3>
+          <ol style="margin-left: 20px; color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
+            <li><strong>Order Placed:</strong> Your order is recorded in the system and assigned a unique receipt number.</li>
+            <li><strong>Confirmed:</strong> Our billing staff verifies the order items and queues them for preparation.</li>
+            <li><strong>Preparing:</strong> Our baristas and chefs brew fresh coffee and cook your food.</li>
+            <li><strong>Ready:</strong> Your food is delivered to your table (dine-in) or called for pickup at the counter.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

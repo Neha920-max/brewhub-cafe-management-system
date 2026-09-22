@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BrewHub – Modern Cafe Management System. Order fresh artisan coffee, delicious meals, track orders live, and join our loyalty membership club.">
+  <title>BrewHub – Cafe Management System | Fresh Coffee & Moments</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag">Welcome to BrewHub</span>
+          <h1>Fresh Coffee.<br><span class="highlight">Unforgettable Moments.</span></h1>
+          <p class="hero-desc">
+            Experience hand-roasted specialty coffees, gourmet pastries, and savory quick bites in a modern, welcoming atmosphere. Order online for dine-in or takeaway with live order tracking and member rewards.
+          </p>
+          <div class="hero-cta">
+            <a href="menu.html" class="btn btn-primary btn-lg" id="explore-menu-btn">
+              Explore Full Menu ➔
+            </a>
+            <a href="offers.html" class="btn btn-secondary btn-lg" id="view-offers-btn">
+              View Special Offers
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Arabica Specialty Beans</p>
+            </div>
+            <div class="stat-item">
+              <h3>20+</h3>
+              <p>Handcrafted Drinks</p>
+            </div>
+            <div class="stat-item">
+              <h3>15 Mins</h3>
+              <p>Average Prep Time</p>
+            </div>
+            <div class="stat-item">
+              <h3>4.9 ★</h3>
+              <p>Customer Rating</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-icon">☕</div>
+            <span class="badge badge-blue">Barista's Recommendation</span>
+            <h3 style="margin-top: 10px;">Caramel Macchiato</h3>
+            <p>Freshly steamed milk paired with vanilla syrup, marked with intense double espresso and golden caramel sauce.</p>
+            
+            <div class="hero-card-deal">
+              <strong>Order Online & Earn 5% Cashback</strong>
+              <span>Use Code: <strong>BREW15</strong> for 15% off today</span>
+            </div>
+
+            <a href="menu.html" class="btn btn-primary" style="width: 100%;">
+              Order Now • Rs. 290
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose BrewHub (Features) -->
+    <section class="section" id="features-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">The BrewHub Advantage</span>
+          <h2 class="section-title">Why Coffee Lovers Choose Us</h2>
+          <p class="section-subtitle">
+            From farm-sourced beans to frictionless digital ordering, we deliver excellence in every single cup and meal.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🌱</div>
+            <h3>Ethically Sourced Beans</h3>
+            <p>Premium single-origin coffee beans sourced directly from certified organic farms and roasted to perfection.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Instant Digital Ordering</h3>
+            <p>Order right from your table or phone without waiting in long counter queues. Fast, contactless, and convenient.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Live Order Tracking</h3>
+            <p>Follow your order journey step-by-step from counter confirmation to barista brewing and kitchen preparation.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎁</div>
+            <h3>Loyalty Points Club</h3>
+            <p>Earn BrewHub reward points on every order. Redeem points for free coffees, exclusive discounts, and birthday treats.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Specialties Showcase -->
+    <section class="section" style="background-color: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);" id="popular-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Chef & Barista Picks</span>
+          <h2 class="section-title">Popular Items Today</h2>
+          <p class="section-subtitle">Our customer favorites crafted fresh throughout the day.</p>
+        </div>
+
+        <div class="menu-grid">
+          <!-- Card 1 -->
+          <article class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&auto=format&fit=crop&q=80" alt="Velvety Cappuccino" class="menu-card-img">
+              <span class="menu-tag">Bestseller</span>
+              <span class="diet-tag beverage">🔵 Beverage</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-category-title">Hot Coffee</span>
+              <h3 class="menu-item-name">Velvety Cappuccino</h3>
+              <p class="menu-item-desc">A perfect harmony of rich double espresso, steamed whole milk, and dense microfoam dusted with chocolate powder.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price"><span>Rs.</span> 240</div>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(2)">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&auto=format&fit=crop&q=80" alt="Iced Spanish Latte" class="menu-card-img">
+              <span class="menu-tag">Popular</span>
+              <span class="diet-tag beverage">🔵 Beverage</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-category-title">Cold Drinks</span>
+              <h3 class="menu-item-name">Iced Spanish Latte</h3>
+              <p class="menu-item-desc">Chilled espresso sweetened with caramelized condensed milk, poured over clear ice cubes for a smooth, refreshing treat.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price"><span>Rs.</span> 320</div>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(6)">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&auto=format&fit=crop&q=80" alt="Butter Croissant" class="menu-card-img">
+              <span class="menu-tag">Fresh Daily</span>
+              <span class="diet-tag veg">🟢 Veg</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-category-title">Bakery</span>
+              <h3 class="menu-item-name">Golden Butter Croissant</h3>
+              <p class="menu-item-desc">Flaky, golden-brown French pastry layered with rich butter, baked crisp outside and soft, airy inside.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price"><span>Rs.</span> 160</div>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(9)">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&auto=format&fit=crop&q=80" alt="Chicken Club Sandwich" class="menu-card-img">
+              <span class="menu-tag">Chef's Special</span>
+              <span class="diet-tag non-veg">🔴 Non-Veg</span>
+            </div>
+            <div class="menu-card-body">
+              <span class="menu-category-title">Snacks & Meals</span>
+              <h3 class="menu-item-name">Chicken Club Sandwich</h3>
+              <p class="menu-item-desc">Triple-decker toasted bread filled with grilled herb chicken, crisp lettuce, cheese, fried egg, and garlic mayo.</p>
+              <div class="menu-card-footer">
+                <div class="menu-price"><span>Rs.</span> 380</div>
+                <button class="btn btn-primary btn-sm" onclick="addToCart(13)">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="menu.html" class="btn btn-secondary btn-lg">
+            View All 16 Menu Items ➔
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Callout Banner -->
+    <section class="section" id="loyalty-banner">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-coffee) 100%); color: #ffffff; border-radius: var(--radius-lg); padding: 50px 40px; box-shadow: var(--shadow-lg); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; align-items: center;">
+          <div>
+            <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff; margin-bottom: 12px;">BrewHub Rewards Club</span>
+            <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 14px; line-height: 1.2;">
+              Join Our Membership & Earn Free Coffee
+            </h2>
+            <p style="color: #e8d8c3; font-size: 1.05rem; margin-bottom: 25px;">
+              Get 50 bonus loyalty points immediately on sign up! Earn 5 points for every Rs. 100 spent, and unlock VIP discounts up to 10% on every order.
+            </p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <a href="membership.html" class="btn btn-secondary" style="background: #ffffff; color: var(--primary-dark); font-weight: 700;">
+                Check My Member Card
+              </a>
+              <a href="offers.html" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+                Explore Active Deals
+              </a>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <div style="display: inline-block; background: rgba(255,255,255,0.1); border: 2px dashed rgba(255,255,255,0.3); border-radius: var(--radius-lg); padding: 25px 35px;">
+              <div style="font-size: 3rem; margin-bottom: 8px;">💳</div>
+              <h3 style="font-size: 1.4rem;">Digital Rewards Card</h3>
+              <p style="color: #e8d8c3; font-size: 0.9rem;">No plastic card needed. Track points seamlessly online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Preview -->
+    <section class="section" id="reviews-preview">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Community Feedback</span>
+          <h2 class="section-title">What Our Guests Say</h2>
+          <p class="section-subtitle">Real experiences and ratings from our valued visitors and students.</p>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-top">
+              <div>
+                <div class="reviewer-name">Aarav Sharma</div>
+                <span class="badge badge-coffee">Hot Coffee</span>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-comment">"The Signature Espresso and Caramel Macchiato are by far the best in Kathmandu! Cozy ambiance and courteous staff."</p>
+            <div class="review-date">2026-09-02</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <div>
+                <div class="reviewer-name">Pooja Shrestha</div>
+                <span class="badge badge-coffee">Bakery</span>
+              </div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+            <p class="review-comment">"The Butter Croissant was flaky and fresh out of the oven. Loved their student discount offer too!"</p>
+            <div class="review-date">2026-09-05</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <div>
+                <div class="reviewer-name">Bikash Thapa</div>
+                <span class="badge badge-coffee">Service & Food</span>
+              </div>
+              <div class="review-stars">★★★★☆</div>
+            </div>
+            <p class="review-comment">"Super smooth online ordering system. Placed my order for dine-in and received my Chicken Club Sandwich in 10 minutes."</p>
+            <div class="review-date">2026-09-07</div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="feedback.html" class="btn btn-outline">
+            Leave Your Feedback & Rating ➔
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Soft Cream & Warm Brown Coffee Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized, transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

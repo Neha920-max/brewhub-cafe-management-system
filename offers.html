@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Discover active cafe offers, promotional discounts, student coupons, and combo deals at BrewHub.">
+  <title>Special Offers & Discounts | BrewHub Cafe Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container">
+      <div class="top-bar-info">
+        <span>📍 Putalisadak, Kathmandu, Nepal</span>
+        <span>🕒 Open Daily: 7:00 AM – 9:30 PM</span>
+        <span>📞 +977-1-4421234</span>
+      </div>
+      <div>
+        <span>🎉 Student Special: 10% Off with code <strong>STUDENT10</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="home-logo-link">
+        <div class="logo-icon">☕</div>
+        <div>Brew<span class="accent">Hub</span></div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" id="mobile-nav-btn">
+        ☰
+      </button>
+
+      <nav class="nav-menu" id="primary-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="offers.html" class="nav-link active">Offers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="feedback.html" class="nav-link">Feedback</a>
+        <a href="order-status.html" class="nav-link">Track Order</a>
+        <div id="auth-nav-link">
+          <a href="login.html" class="nav-link">Login</a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn" id="cart-nav-button" title="View Cart">
+          <span>🛒 Cart</span>
+          <span class="cart-badge" style="display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="section-tag">Save on Your Favorites</span>
+          <h1 class="section-title">Special Offers & Promo Deals</h1>
+          <p class="section-subtitle">
+            Enjoy exclusive discounts, combo savings, and student privileges on our handcrafted food and beverages.
+          </p>
+        </div>
+
+        <!-- Offers Grid -->
+        <div class="offers-grid">
+          <!-- Offer 1 -->
+          <div class="offer-card">
+            <div class="offer-header">
+              <div class="offer-discount">15% OFF</div>
+              <div class="offer-title">BrewHub Grand Special</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">
+                Get a flat 15% discount on all coffee beverages and meals. Valid for both dine-in and takeaway orders.
+              </p>
+              <div>
+                <div class="coupon-box">
+                  <span class="coupon-code">BREW15</span>
+                  <button class="btn btn-outline btn-sm" onclick="copyCouponCode('BREW15')">
+                    📋 Copy
+                  </button>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="applyOfferAndGoToMenu('BREW15')">
+                  Apply & Order ➔
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 2 -->
+          <div class="offer-card">
+            <div class="offer-header" style="background: linear-gradient(135deg, #0284c7, #0ea5e9);">
+              <div class="offer-discount">10% OFF</div>
+              <div class="offer-title">Divya Gyan & TU Student Discount</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">
+                Dedicated student discount for high school and university students. Flash your student card at counter!
+              </p>
+              <div>
+                <div class="coupon-box">
+                  <span class="coupon-code">STUDENT10</span>
+                  <button class="btn btn-outline btn-sm" onclick="copyCouponCode('STUDENT10')">
+                    📋 Copy
+                  </button>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="applyOfferAndGoToMenu('STUDENT10')">
+                  Apply & Order ➔
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 3 -->
+          <div class="offer-card">
+            <div class="offer-header" style="background: linear-gradient(135deg, #16a34a, #22c55e);">
+              <div class="offer-discount">20% OFF</div>
+              <div class="offer-title">Weekend Bakery Fiesta</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">
+                Treat yourself every Saturday and Sunday to 20% off all freshly baked croissants, muffins, and brownies.
+              </p>
+              <div>
+                <div class="coupon-box">
+                  <span class="coupon-code">WEEKEND20</span>
+                  <button class="btn btn-outline btn-sm" onclick="copyCouponCode('WEEKEND20')">
+                    📋 Copy
+                  </button>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="applyOfferAndGoToMenu('WEEKEND20')">
+                  Apply & Order ➔
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Offer 4 -->
+          <div class="offer-card">
+            <div class="offer-header" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
+              <div class="offer-discount">Rs. 50 OFF</div>
+              <div class="offer-title">Welcome First Order Bonus</div>
+            </div>
+            <div class="offer-body">
+              <p class="offer-desc">
+                First time at BrewHub? Enjoy an instant flat Rs. 50 deduction on orders with subtotal above Rs. 250.
+              </p>
+              <div>
+                <div class="coupon-box">
+                  <span class="coupon-code">WELCOME50</span>
+                  <button class="btn btn-outline btn-sm" onclick="copyCouponCode('WELCOME50')">
+                    📋 Copy
+                  </button>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;" onclick="applyOfferAndGoToMenu('WELCOME50')">
+                  Apply & Order ➔
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms & Policies Notice -->
+        <div
+          style="margin-top: 50px; background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 25px; box-shadow: var(--shadow-sm);">
+          <h3 style="font-size: 1.15rem; color: var(--primary-dark); margin-bottom: 12px;">Offer Terms & Conditions:
+          </h3>
+          <ul
+            style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; padding-left: 20px; list-style: disc;">
+            <li>Coupons cannot be clubbed with other promotional discount vouchers on a single bill.</li>
+            <li>Student discount code <code>STUDENT10</code> requires showing valid student credentials at counter
+              payment.</li>
+            <li>All offers are subject to ingredient availability in the kitchen.</li>
+            <li>Cafe management reserves the right to amend or withdraw promotional offers with prior announcement.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span>☕</span> BrewHub
+          </a>
+          <p class="footer-desc">
+            BrewHub is an integrated web-based Cafe Management System designed to make cafe operations organized,
+            transparent, and user-friendly for customers, staff, and administrators.
+          </p>
+          <div class="footer-credits">
+            <strong>Divya Gyan College (TU)</strong><br>
+            BCA 4th Semester Project • By Neha Kumari Sah
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Our Menu</a></li>
+            <li><a href="offers.html">Special Offers</a></li>
+            <li><a href="membership.html">Rewards & Membership</a></li>
+            <li><a href="order-status.html">Track Order Status</a></li>
+            <li><a href="feedback.html">Customer Feedback</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portals</h4>
+          <ul class="footer-links">
+            <li><a href="login.html">Customer Login</a></li>
+            <li><a href="register.html">Create Customer Account</a></li>
+            <li><a href="login.html">Staff Order Desk</a></li>
+            <li><a href="login.html">Admin Management Panel</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit Our Cafe</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span> Divya Gyan Complex, Putalisadak, Kathmandu, Nepal</li>
+            <li><span>📞</span> +977-1-4421234 / 9841234567</li>
+            <li><span>✉️</span> info@brewhubcafe.com.np</li>
+            <li><span>🕒</span> Sunday – Saturday: 7:00 AM – 9:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BrewHub – Cafe Management System. All Rights Reserved.</p>
+        <p>Supervisor: <strong>Mr. Sirish Timalsina</strong> | TU Affiliated</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Unified Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
